@@ -7,3 +7,11 @@
 ## Intro React
 
 - [Föreläsning](intro)
+
+## Create React App
+
+- [Föreläsning](create-react-app)
+
+## Props & Children
+
+- [Föreläsning](props-children)
