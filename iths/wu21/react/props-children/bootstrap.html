@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>index</title>
+      <title>bootstrap</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,33 +261,50 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="material-till-reactdelen">Material till Reactdelen</h1>
+      <h1 class="mume-header" id="bootstrapkomponent">Bootstrapkomponent</h1>
 
-<h2 class="mume-header" id="f%C3%B6rberedande-uppgifter">F&#xF6;rberedande uppgifter</h2>
+<p>Skapa en Reactkomponent av Alert-komponenten som finns i Bootstrap-biblioteket.</p>
+<p><em>a) Komma ig&#xE5;ng med Bootstrap i Create React App</em></p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash">  <span class="token function">npm</span> <span class="token function">install</span> bootstrap
+</pre><p>L&#xE4;gg till import i App.jsx:</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token string">&apos;bootstrap/dist/css/bootstrap.css&apos;</span><span class="token punctuation">;</span> 
+</pre><p><em>b) Kolla p&#xE5; <a href="https://getbootstrap.com/docs/4.4/components/alerts/">https://getbootstrap.com/docs/4.4/components/alerts/</a> vilken html-kod som kr&#xE4;vs f&#xF6;r att skapa en Alert</em></p>
+<p><em>c) Skapa en ny komponent, Alert.jsx, som ska anv&#xE4;ndas enligt f&#xF6;ljande:</em></p>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Alert</span></span><span class="token punctuation">&gt;</span></span><span class="token constant">H</span>&#xE4;r st&#xE5;r inneh&#xE5;llet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Alert</span></span><span class="token punctuation">&gt;</span></span>
+</pre><details>
+    <summary>Svar</summary>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword keyword-const">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Alert</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert alert-primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">)</span>
 
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">Alert</span><span class="token punctuation">;</span>
+</pre></details>
+<p><em>d) Klurig! L&#xE4;gg till st&#xF6;d f&#xF6;r att skicka in en prop <em>type</em> som styr bakrgundsf&#xE4;rgen baserat p&#xE5; t.ex. primary,secondary, success osv.. Type-propen ska vara valfri och om man inte s&#xE4;tter ett v&#xE4;rde ska den ha ett defaultv&#xE4;rde, t.ex. &apos;primary&apos;</em></p>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Alert</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token constant">H</span>&#xE4;r st&#xE5;r inneh&#xE5;llet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Alert</span></span><span class="token punctuation">&gt;</span></span>
+</pre><details>
+  <summary>Svar</summary>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx">  <span class="token keyword keyword-const">const</span> <span class="token maybe-class-name">Alert</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children<span class="token punctuation">,</span> type<span class="token operator">=</span><span class="token string">&apos;primary&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">alert alert-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>type<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">Alert</span><span class="token punctuation">;</span>
+</pre></details>
+<p><strong>e) Testa bygg flera komponenter baserade p&#xE5; Bootstrap. N&#xE5;gra f&#xF6;rslag:</strong></p>
 <ul>
-<li><a href="preparation/excercises.html">Repetitionsuppgifter inf&#xF6;r React</a></li>
+<li>Badge (<a href="https://getbootstrap.com/docs/4.4/components/badge/">https://getbootstrap.com/docs/4.4/components/badge/</a>)</li>
 </ul>
-<h2 class="mume-header" id="intro-react">Intro React</h2>
-
-<ul>
-<li><a href="intro">F&#xF6;rel&#xE4;sning</a></li>
-<li><a href="intro/excercises.html">&#xD6;vningar</a></li>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token comment">//F&#xF6;rslag p&#xE5; implementation</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Badge</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>New<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Example</span> heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Badge</span></span><span class="token punctuation">&gt;</span></span>
+</pre><ul>
+<li>Card (<a href="https://getbootstrap.com/docs/4.4/components/card/">https://getbootstrap.com/docs/4.4/components/card/</a>)</li>
 </ul>
-<h2 class="mume-header" id="create-react-app">Create React App</h2>
-
-<ul>
-<li><a href="create-react-app">F&#xF6;rel&#xE4;sning</a></li>
-<li><a href="create-react-app/excercises.html">&#xD6;vningar</a></li>
-</ul>
-<h2 class="mume-header" id="props-children">Props &amp; Children</h2>
-
-<ul>
-<li><a href="props-children">F&#xF6;rel&#xE4;sning</a></li>
-<li><a href="props-children/excercises.html">&#xD6;vningar</a></li>
-<li><a href="props-children/bootstrap.html">Extra &#xF6;vning - Bootstrap</a></li>
-</ul>
-
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token comment">//F&#xF6;rslag p&#xE5; implementation</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Card</span></span> <span class="token attr-name">imageUrl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">linkText</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span> <span class="token attr-name">linkUrl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>...<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Texten</span> som st&#xE5;r mitt p&#xE5; kortet skriver man h&#xE4;r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Card</span></span><span class="token punctuation">&gt;</span></span>
+</pre>
       </div>
       
       
