@@ -2,7 +2,7 @@
 
 ## Förberedande uppgifter
 
-- [Repetitionsuppgifter inför React](preparation)
+- [Repetitionsuppgifter inför React](preparation/excercises.html)
 
 ## Intro React
 
