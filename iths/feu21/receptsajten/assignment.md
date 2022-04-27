@@ -140,7 +140,7 @@ För **godkänt**
 | GET    | `/recipes?search=abc`     | -    | Hämtar alla recept filtrerade på en söksträng  |
 | GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
 | GET    | `/category`     | -    | Hämtar alla kategorier  |
-| GET    | `/category/:categoryId/recipe`     | -    | Hämtar recept för en viss kategori  |
+| GET    | `/category/:categoryId/recipes`     | -    | Hämtar recept för en viss kategori  |
 
 För **väl godkänt**
 
