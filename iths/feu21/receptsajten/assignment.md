@@ -137,6 +137,7 @@ För **godkänt**
 | Metod  | Resurs          | Body | Respons |
 |:-------|:----------------|------|----------------------------|
 | GET    | `/recipes`     | -    | Hämtar information för alla recept  |
+| GET    | `/recipes?search=abc`     | -    | Hämtar alla recept filtrerade på en söksträng  |
 | GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
 | GET    | `/category`     | -    | Hämtar alla kategorier  |
 | GET    | `/category/:categoryId/recipe`     | -    | Hämtar recept för en viss kategori  |
