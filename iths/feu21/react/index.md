@@ -22,6 +22,10 @@
 
 - [Föreläsning](css)
 
+## Events
+
+- [Föreläsning](events)
+
 ## Kaffeappen - workbook
 
 - [Workbook](kaffeappen-workbook)
