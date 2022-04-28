@@ -29,9 +29,11 @@ Projektet ska lämnas in tisdag 24/5 kl 23.59 och presenteras för klassen onsda
 |imageUrl    |string            |Länk till bild för receptet (kan ligga online) |
 |timeInMins  |string            |Antal minuter det tar att laga receptet |
 |ratings     |`array<int>`        |Betyg på receptet (1-5) |
+|category    |`array<string>`   |Kategorier |
 |ingrediensts|`array<Ingredient>` |Ingredienser i receptet |
 |instructions|`array<Instruction>`|Instruktioner till receptet |
 |comments    |`array<Comment>`    |Kommentarer till receptet |
+
 
 - Ett ingrediens-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
 
@@ -66,6 +68,7 @@ Projektet ska lämnas in tisdag 24/5 kl 23.59 och presenteras för klassen onsda
 | GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
 | GET    | `/category`     | -    | Hämtar alla kategorier  |
 | GET    | `/category/:categoryId/recipes`     | -    | Hämtar recept för en viss kategori  |
+| GET    | `/category/:categoryId/recipes?search=abc`     | -    | Hämtar alla recept i en kategori filtrerade på en söksträng  |
 
 **För väl godkänt**
 
