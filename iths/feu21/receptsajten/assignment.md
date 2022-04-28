@@ -12,6 +12,71 @@ Projektet ska lämnas in tisdag 24/5 kl 23.59 och presenteras för klassen onsda
 
 ## Specifikation
 
+### Backend
+
+**För godkänt**
+
+- Alla recept ska lagras i en collection i MongoDB
+- Det finns ingen funktion för att lägga till recept - receptdata kan läggas till via t.ex. mongo shell eller Compass
+- Om du vill börja med backend-delen kan du använda t.ex. Insomnia för att testa dina routes
+- Ett recept-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
+
+| Egenskap   | Datatyp         | Värde |
+|:-----------|:-----------------|:------|
+|id          |string            |Id för receptet |
+|title       |string            |Namn på receptet |
+|description |string            |Beskrivning av receptet |
+|imageUrl    |string            |Länk till bild för receptet (kan ligga online) |
+|timeInMins  |string            |Antal minuter det tar att laga receptet |
+|ratings     |`array<int>`        |Betyg på receptet (1-5) |
+|ingrediensts|`array<Ingredient>` |Ingredienser i receptet |
+|instructions|`array<Instruction>`|Instruktioner till receptet |
+|comments    |`array<Comment>`    |Kommentarer till receptet |
+
+- Ett ingrediens-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
+
+| Egenskap   | Datatyp         | Värde |
+|:-----------|:----------------|:------|
+|ingredient  |string           |Namn på ingrediensen |
+|amount      |number           |Mängd |
+|unit        |string           |Enhet som mängden anges i, t.ex. msk, tsk, gram.. |
+
+- Ett instruction-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
+
+| Egenskap   | Datatyp         | Värde |
+|:-----------|:----------------|:------|
+|instruction |string           |Beskrivning av vad man ska göra |
+|prio        |int              |Var i ordningen instruktionen kommer |
+
+- Ett comment-objekt (VG) ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
+
+| Egenskap   | Datatyp         | Värde |
+|:-----------|:----------------|:------|
+|comment     |string           |Kommentaren som någon skrivit |
+|name        |string           |Namn på den som skrivit kommentaren |
+|createdAt   |date             |Datum när kommentaren skrevs |
+
+- Man kan välja om *ingredienser*, *instruktioner*, *ratings* och *kommentarer* (VG) ska vara subcolletion eller referens till en annan collection (vi kommer gå igenom detta mer i detalj)
+- Appen ska ha följande routes i REST-api:et:
+
+| Metod  | Resurs          | Body | Respons |
+|:-------|:----------------|------|----------------------------|
+| GET    | `/recipes`     | -    | Hämtar information för alla recept  |
+| GET    | `/recipes?search=abc`     | -    | Hämtar alla recept filtrerade på en söksträng  |
+| GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
+| GET    | `/category`     | -    | Hämtar alla kategorier  |
+| GET    | `/category/:categoryId/recipes`     | -    | Hämtar recept för en viss kategori  |
+
+**För väl godkänt**
+
+- Routes som krävs för kommenteringsfunktionen:
+
+| Metod  | Resurs          | Body | Respons |
+|:-------|:----------------|------|----------------------------|
+| GET    | `/recipes/:recipeId/comments`     | -    | Hämtar alla kommentarer för ett recept  |
+| POST    | `/recipes/:recipeId/comments`     | -    | Postar en kommentar till ett recept  |
+
+---
 ### Frontend
 **För godkänt**
 
@@ -82,75 +147,12 @@ Appen ska ha ett antal routes. Dessa ska implementeras med hjälp av React Route
 
 ![Receptsida](receptsida.png)
 ---
-För **väl godkänt**
+**För väl godkänt**
 
 - Använder Redux för state-hantering
 - Implementera en funktion där man på receptsidan kan kommentera enskilda recept
 - Ha en välstrukturerad kod, meningsfull namnsättning samt en tydlig mappstruktur och uppdelning mellan olika filer
-
-### Backend
-
-För **godkänt**
-
-- Alla recept ska lagras i en collection i MongoDB
-- Det finns ingen funktion för att lägga till recept - receptdata måste läggas till via t.ex. mongo shell eller Compass
-- Ett recept-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
-
-| Egenskap   | Datatyp         | Värde |
-|:-----------|:-----------------|:------|
-|id          |string            |Id för receptet |
-|title       |string            |Namn på receptet |
-|description |string            |Beskrivning av receptet |
-|imageUrl    |string            |Länk till bild för receptet (kan ligga online) |
-|timeInMins  |string            |Antal minuter det tar att laga receptet |
-|ratings     |`array<int>`        |Betyg på receptet (1-5) |
-|ingrediensts|`array<Ingredient>` |Ingredienser i receptet |
-|instructions|`array<Instruction>`|Instruktioner till receptet |
-|comments    |`array<Comment>`    |Kommentarer till receptet |
-
-- Ett ingrediens-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
-
-| Egenskap   | Datatyp         | Värde |
-|:-----------|:----------------|:------|
-|ingredient  |string           |Namn på ingrediensen |
-|amount      |number           |Mängd |
-|unit        |string           |Enhet som mängden anges i, t.ex. msk, tsk, gram.. |
-
-- Ett instruction-objekt ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
-
-| Egenskap   | Datatyp         | Värde |
-|:-----------|:----------------|:------|
-|instruction |string           |Beskrivning av vad man ska göra |
-|prio        |int              |Var i ordningen instruktionen kommer |
-
-- Ett comment-objekt (VG) ska innehålla följande egenskaper. Du får lägga till fler om du behöver, men får inte ta bort några:
-
-| Egenskap   | Datatyp         | Värde |
-|:-----------|:----------------|:------|
-|comment     |string           |Kommentaren som någon skrivit |
-|name        |string           |Namn på den som skrivit kommentaren |
-|createdAt   |date             |Datum när kommentaren skrevs |
-
-- Man kan välja om *ingredienser*, *instruktioner*, *ratings* och *kommentarer* (VG) ska vara subcolletion eller referens till en annan collection (vi kommer gå igenom detta mer i detalj)
-- Appen ska ha följande routes i REST-api:et:
-
-| Metod  | Resurs          | Body | Respons |
-|:-------|:----------------|------|----------------------------|
-| GET    | `/recipes`     | -    | Hämtar information för alla recept  |
-| GET    | `/recipes?search=abc`     | -    | Hämtar alla recept filtrerade på en söksträng  |
-| GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
-| GET    | `/category`     | -    | Hämtar alla kategorier  |
-| GET    | `/category/:categoryId/recipes`     | -    | Hämtar recept för en viss kategori  |
-
-För **väl godkänt**
-
-- Routes som krävs för kommenteringsfunktionen:
-
-| Metod  | Resurs          | Body | Respons |
-|:-------|:----------------|------|----------------------------|
-| GET    | `/recipes/:recipeId/comments`     | -    | Hämtar alla kommentarer för ett recept  |
-| POST    | `/recipes/:recipeId/comments`     | -    | Postar en kommentar till ett recept  |
-
+---
 ## Kom igång tips!
 
 - Skapa en katalog och initiera ett tomt Git-repo. Här ska det ligga två kataloger:
@@ -186,3 +188,5 @@ När du är klar kan du jobba vidare för att lära dig ännu mer. Här är någ
 - (Frontend) Möjlighet att ändra antal portioner och att Ingredienslistan uppdateras därefter
 - (Frontend) Snygg och responsiv design
 - (Backend + Frontend) Möjlighet att logga in med sitt Google eller Facebook-konto och låta endast inloggade användare kommentera
+
+## Lycka till!
