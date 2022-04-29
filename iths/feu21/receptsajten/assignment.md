@@ -59,9 +59,9 @@ Projektet ska lämnas in tisdag 24/5 kl 23.59 och presenteras för klassen onsda
 | GET    | `/recipes`     | -    | Hämtar information för alla recept  |
 | GET    | `/recipes?search=abc`     | -    | Hämtar alla recept filtrerade på en söksträng  |
 | GET    | `/recipes/:recipeId`     | -    | Hämtar all information för ett recept  |
-| GET    | `/category`     | -    | Hämtar alla kategorier  |
-| GET    | `/category/:categoryId/recipes`     | -    | Hämtar recept för en viss kategori  |
-| GET    | `/category/:categoryId/recipes?search=abc`     | -    | Hämtar alla recept i en kategori filtrerade på en söksträng  |
+| GET    | `/categories`     | -    | Hämtar alla kategorier  |
+| GET    | `/categories/:categoryName/recipes`     | -    | Hämtar recept för en viss kategori  |
+| GET    | `/categories/:categoryName/recipes?search=abc`     | -    | Hämtar alla recept i en kategori filtrerade på en söksträng  |
 
 **För väl godkänt**
 
