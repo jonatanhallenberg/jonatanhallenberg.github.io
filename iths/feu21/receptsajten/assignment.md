@@ -158,9 +158,7 @@ Appen ska ha ett antal routes. Dessa ska implementeras med hjälp av React Route
 ---
 ## Kom igång tips!
 
-- Skapa en katalog och initiera ett tomt Git-repo. Här ska det ligga två kataloger:
-  - Katalog för backend som heter t.ex. api, server eller liknande
-  - Katalog för frontend som automatiskt skapas när du initierar ett Create React App-projekt
+Börja med att följa instruktionerna för att initiera ett [monorepo](setup-monorepo.html)
 
 *Backend*
 
@@ -175,6 +173,7 @@ npx tsc --init
 ```
 - Installera alla dependencies som krävs för att bygga en express-applikation med Mongoose
 - Skapa server.ts och lägg in grundkoden för en express-app
+- Lägg till en .gitignore-fil och lägg in "node_modules"
 - Testa att servern funkar!
 
 *Frontend*
