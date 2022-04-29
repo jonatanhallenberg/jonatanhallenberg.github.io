@@ -7,16 +7,25 @@
 ```css
 input {
     font-size: 18px;
-    line-height: 20px;
     border: 1px solid gray;
     border-radius: 3px;
+    padding: 20px;
 }
 ```
 <details>
     <summary>Svar</summary>
 
 ```jsx
-const Title = (props) => <h1>{props.text}</h1>
+const textboxStyle = {
+    fontSize: "18px",
+    border: "1px solid gray",
+    borderRadius: "3px",
+    padding: "20px"
+}
+const Textbox = () => (
+    <input type="text" style={textboxStyle} />
+)
+export default Textbox;
 ```
 </details>
 
@@ -27,46 +36,30 @@ const Title = (props) => <h1>{props.text}</h1>
 ```css
 input {
     font-size: 18px;
-    line-height: 20px;
     border: 1px solid gray;
     border-radius: 3px;
+    padding: 20px;
 }
 ```
 
 <details>
     <summary>Svar</summary>
 
-```jsx
-const Title = (props) => <h1>{props.text}</h1>
-```
-</details>
-
----
-
-**3) Övning - Styled components**
-
-- Skapa en React-komponent som är en textruta (input) med följande styling:
-
 ```css
-input {
+/* textbox.module.css*/
+.textBox {
     font-size: 18px;
-    line-height: 20px;
     border: 1px solid gray;
     border-radius: 3px;
+    padding: 20px;
 }
 ```
 
----
-
-**4) Övning - Styled Components m. props**
-
-- Skapa en textbox-komponent som tar emot en prop som heter isValid
-- Om isValid=true ska bakgrundsfärger vara vit
-- Om isValid=false ska bakgrundsfärgen vara ljusröd
-
-```tsx
-//Exempel på implementation
-<Textbox isValid={false} />
+```jsx
+//Textbox.jsx
+import styles from './textbox.module.css'
+const Textbox = () => (
+    <input type="text" className={styles.textBox} />
+)
 ```
-
----
+</details>

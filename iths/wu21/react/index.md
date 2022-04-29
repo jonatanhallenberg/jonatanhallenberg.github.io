@@ -23,3 +23,4 @@
 ## CSS
 
 - [Föreläsning](css)
+- [Övningar](css/excercises.html)
