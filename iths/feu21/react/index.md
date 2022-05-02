@@ -30,6 +30,22 @@
 
 - [Föreläsning](use-state)
 
+## Listor
+
+- [Föreläsning](listor)
+- [Övningar](listor/exercises.html)
+
+## Fetch
+
+- [Föreläsning](fetch)
+- [Övningar](fetch/exercises.html)
+
+## Conditional rendering
+
+- [Föreläsning](conditional-rendering)
+- [Övningar](conditional-rendering/exercises.html)
+
+
 ## Kaffeappen - workbook
 
 - [Workbook](kaffeappen-workbook)
