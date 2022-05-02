@@ -29,21 +29,22 @@
 ## useState
 
 - [Föreläsning](use-state)
+- [Övningar](use-state/excercises.html)
 
 ## Listor
 
 - [Föreläsning](listor)
-- [Övningar](listor/exercises.html)
+- [Övningar](listor/excercises.html)
 
 ## Fetch
 
 - [Föreläsning](fetch)
-- [Övningar](fetch/exercises.html)
+- [Övningar](fetch/excercises.html)
 
 ## Conditional rendering
 
 - [Föreläsning](conditional-rendering)
-- [Övningar](conditional-rendering/exercises.html)
+- [Övningar](conditional-rendering/excercises.html)
 
 
 ## Kaffeappen - workbook
