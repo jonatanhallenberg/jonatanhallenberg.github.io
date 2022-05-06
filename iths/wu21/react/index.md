@@ -27,15 +27,18 @@
 
 ## Events
 
-- [Föreläsning](events)
+- [Föreläsning](events) 
+- [Övningar](events/excercises.html)
 
 ## useState
 
 - [Föreläsning](useState)
+- [Övningar](useState/excercises.html)
 
 ## Listor
 
 - [Föreläsning](listor)
+- [Övningar](listor/excercises.html)
 
 ## Fetch
 
