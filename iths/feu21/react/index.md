@@ -49,6 +49,7 @@
 ## Redux
 
 - [Föreläsning](redux)
+- [Övningar](redux/excercises.html)
 
 ## Kaffeappen - workbook
 
