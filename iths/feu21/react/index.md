@@ -46,6 +46,9 @@
 - [Föreläsning](conditional-rendering)
 - [Övningar](conditional-rendering/excercises.html)
 
+## Redux
+
+- [Föreläsning](redux)
 
 ## Kaffeappen - workbook
 
