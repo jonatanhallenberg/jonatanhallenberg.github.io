@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>no title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}/**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}.emoji {
+  height: 0.8em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+    <html><head></head><body><div><p><img src="data:image/png;charset=utf-8;base64,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" alt="bg left:40% 80%"></p>
+<h1 class="mume-header" id="react-router" ebook-toc-level-1 heading="React Router">React Router</h1>
+
+<p>Jonatan Hallenberg</p>
+<hr>
+<h2 class="mume-header" id="intro" ebook-toc-level-2 heading="Intro">Intro</h2>
+
+<ul>
+<li>Med React bygger vi en Single Page Application</li>
+<li>Det inneb&#xE4;r att HTML-sidan inte laddas om varje g&#xE5;ng vi byter adress i webbl&#xE4;saren</li>
+<li>Ist&#xE4;llet anv&#xE4;nds JavaScript och React f&#xF6;r att rendera nytt inneh&#xE5;ll n&#xE4;r vi g&#xE5;r till en ny webbadress (URL)</li>
+<li>F&#xF6;r att f&#xE5;nga upp n&#xE4;r vi byter URL och visa upp nytt inneh&#xE5;ll anv&#xE4;nder vi <em>React Router</em></li>
+</ul>
+<hr>
+<h2 class="mume-header" id="installera-react-router" ebook-toc-level-2 heading="Installera React Router">Installera React Router</h2>
+
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx">npm install react<span class="token operator">-</span>router<span class="token operator">-</span>dom
+</pre><hr>
+<h2 class="mume-header" id="browserrouter-i-indexjs" ebook-toc-level-2 heading="BrowserRouter i index.js">BrowserRouter i index.js</h2>
+
+<pre data-role="codeBlock" data-info="diff" class="language-diff">import App from &apos;./App&apos;;
+<span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import { BrowserRouter } from &quot;react-router-dom&quot;;
+</span></span>
+const root = ReactDOM.createRoot(document.getElementById(&apos;root&apos;));
+root.render(
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line"> &lt;React.StrictMode&gt;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">   &lt;BrowserRouter&gt;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">     &lt;App /&gt;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    &lt;/BrowserRouter&gt;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line"> &lt;/React.StrictMode&gt;
+</span></span>);
+</pre><hr>
+<h2 class="mume-header" id="skapa-en-home-komponent" ebook-toc-level-2 heading="Skapa en Home-komponent">Skapa en Home-komponent</h2>
+
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token comment">//Home.jsx</span>
+
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Home</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Home</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token constant">V</span>&#xE4;lkommen till v&#xE5;r sida<span class="token operator">!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">)</span>
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">Home</span><span class="token punctuation">;</span>
+</pre><hr>
+<h2 class="mume-header" id="skapa-en-about-komponent" ebook-toc-level-2 heading="Skapa en About-komponent">Skapa en About-komponent</h2>
+
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token comment">//About.jsx</span>
+
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function"><span class="token maybe-class-name">About</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Om</span> oss<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Vi</span> &#xE4;r ett h&#xE4;rligt g&#xE4;ng <span class="token operator">:</span><span class="token punctuation">)</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">)</span>
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">About</span><span class="token punctuation">;</span>
+</pre><hr>
+<h1 class="mume-header" id="l%C3%A4gga-in-router-i-appjs" ebook-toc-level-1 heading="L&amp;#xE4;gga in router i App.js">L&#xE4;gga in router i App.js</h1>
+
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Routes</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Route</span><span class="token punctuation">,</span> <span class="token maybe-class-name">NavLink</span> <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react-router-dom&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">Home</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;./Home&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">About</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;./About&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function"><span class="token maybe-class-name">App</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Min</span> sida med routes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Routes</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/<span class="token punctuation">&quot;</span></span> <span class="token attr-name">element</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Home</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>about<span class="token punctuation">&quot;</span></span> <span class="token attr-name">element</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">About</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Routes</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">App</span><span class="token punctuation">;</span>
+
+</pre><hr>
+<h1 class="mume-header" id="testa" ebook-toc-level-1 heading="Testa">Testa</h1>
+
+<ul>
+<li>G&#xE5; in p&#xE5; <a href="http://localhost:3000/">http://localhost:3000/</a></li>
+<li>G&#xE5; in p&#xE5; <a href="http://localhost:3000/about">http://localhost:3000/about</a></li>
+</ul>
+<hr>
+<h1 class="mume-header" id="l%C3%A4nka-mellan-sidor" ebook-toc-level-1 heading="L&amp;#xE4;nka mellan sidor">L&#xE4;nka mellan sidor</h1>
+
+<ul>
+<li>Vi anv&#xE4;nder <navlink> ist&#xE4;llet f&#xF6;r vanlig <code>&lt;a/&gt;</code> n&#xE4;r vi l&#xE4;nkar mellan olika sidor</navlink></li>
+</ul>
+<pre data-role="codeBlock" data-info="diff" class="language-diff">//Home.jsx
+<span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import { NavLink } from &apos;react-router-dom&apos;;
+</span></span>
+const Home = () =&gt; (
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">   &lt;&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">       &lt;h2&gt;Home&lt;/h2&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">       &lt;p&gt;V&#xE4;lkommen till v&#xE5;r sida!&lt;/p&gt;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">        &lt;NavLink to=&quot;/about&quot;&gt;Om oss&lt;/Link&gt;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">   &lt;/&gt;
+</span></span>)
+export default Home;
+</pre><hr>
+<h2 class="mume-header" id="flytta-meny" ebook-toc-level-2 heading="Flytta meny">Flytta meny</h2>
+
+<ul>
+<li>Flytta l&#xE4;nkarna s&#xE5; att de ligger direkt i App.js - det blir som en meny f&#xF6;r sidan:</li>
+</ul>
+<pre data-role="codeBlock" data-info="diff" class="language-diff">import { Routes, Route, NavLink } from &quot;react-router-dom&quot;;
+import Home from &apos;./Home&apos;;
+import About from &apos;./About&apos;;
+
+const App = () =&gt; (
+<span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line"> &lt;div&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">   &lt;h1&gt;Min sida med routes&lt;/h1&gt;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    &lt;h2&gt;Meny&lt;/h2&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">    &lt;ul&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">       &lt;li&gt;&lt;NavLink to=&quot;/&quot;&gt;Hem&lt;/NavLink&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">       &lt;li&gt;&lt;NavLink to=&quot;/about&quot;&gt;Om oss&lt;/NavLink&gt; 
+</span><span class="token prefix inserted">+</span><span class="token line">    &lt;/ul&gt;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">   &lt;Routes&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">     &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">     &lt;Route path=&quot;about&quot; element={&lt;About /&gt;} /&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line">   &lt;/Routes&gt;
+</span><span class="token prefix unchanged"> </span><span class="token line"> &lt;/div&gt;
+</span></span>)
+
+export default App;
+
+</pre><hr>
+<h2 class="mume-header" id="markera-l%C3%A4nk-f%C3%B6r-den-sida-man-%C3%A4r-p%C3%A5" ebook-toc-level-2 heading="Markera l&amp;#xE4;nk f&amp;#xF6;r den sida man &amp;#xE4;r p&amp;#xE5;">Markera l&#xE4;nk f&#xF6;r den sida man &#xE4;r p&#xE5;</h2>
+
+<ul>
+<li>Ofta vill man p&#xE5; n&#xE5;got s&#xE4;tt markera l&#xE4;nken f&#xF6;r den sida man &#xE4;r p&#xE5;</li>
+<li>Vi skapar en App.module.css och skapar tv&#xE5; klasser, en f&#xF6;r l&#xE4;nken p&#xE5; den sida man &#xE4;r p&#xE5; och en f&#xF6;r de sidor man inte &#xE4;r p&#xE5;:</li>
+</ul>
+<pre data-role="codeBlock" data-info="css" class="language-css"><span class="token comment">/* App.module.css */</span>
+<span class="token selector"><span class="token class">.activeLink</span></span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.inactiveLink</span></span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+    <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><hr>
+<h2 class="mume-header" id="l%C3%A4nka-in-css-och-v%C3%A4lja-r%C3%A4tt-klass" ebook-toc-level-2 heading="L&amp;#xE4;nka in CSS och v&amp;#xE4;lja r&amp;#xE4;tt klass">L&#xE4;nka in CSS och v&#xE4;lja r&#xE4;tt klass</h2>
+
+<ul>
+<li>Nu l&#xE4;nkar vi in css-filen i App.js och v&#xE4;ljer r&#xE4;tt klass beroende p&#xE5; om vi &#xE4;r p&#xE5; l&#xE4;nkens sida eller inte:</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">//App.js</span>
+
+<span class="token keyword module keyword-import">import</span> <span class="token imports">styles</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;./App.module.css&apos;</span><span class="token punctuation">;</span>
+
+<span class="token spread operator">...</span>
+
+<span class="token operator">&lt;</span><span class="token maybe-class-name">NavLink</span> to<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token maybe-class-name">Hem</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">NavLink</span><span class="token operator">&gt;</span>
+
+<span class="token spread operator">...</span>
+
+<span class="token operator">&lt;</span><span class="token maybe-class-name">NavLink</span> to<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token maybe-class-name">Om</span> oss<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">NavLink</span><span class="token operator">&gt;</span>
+
+</pre><hr>
+<h2 class="mume-header" id="h%C3%A4mta-parametrar-fr%C3%A5n-url" ebook-toc-level-2 heading="H&amp;#xE4;mta parametrar fr&amp;#xE5;n url">H&#xE4;mta parametrar fr&#xE5;n url</h2>
+
+<ul>
+<li>Vi kan anv&#xE4;nda parametrar i en url</li>
+<li>L&#xE4;gg till en route som h&#xE4;mtar olika katter</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token operator">&lt;</span><span class="token maybe-class-name">Route</span> path<span class="token operator">=</span><span class="token string">&quot;cat/:catName&quot;</span> element<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&lt;</span><span class="token maybe-class-name">Cats</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+</pre><hr>
+<h2 class="mume-header" id="h%C3%A4mta-parameter-i-komponent" ebook-toc-level-2 heading="H&amp;#xE4;mta parameter i komponent">H&#xE4;mta parameter i komponent</h2>
+
+<ul>
+<li>Vi skapar komponenten <cats></cats></li>
+<li>Parametern fr&#xE5;n url:en (:catName) h&#xE4;mtar vi med hj&#xE4;lp av hooken useParams</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useParams <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;react-router&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Cats</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> catName <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token maybe-class-name">En</span> katt som heter <span class="token operator">&lt;</span>b<span class="token operator">&gt;</span><span class="token punctuation">{</span>catName<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword module keyword-export">export</span> <span class="token keyword module keyword-default">default</span> <span class="token maybe-class-name">Cats</span><span class="token punctuation">;</span>
+</pre><hr>
+<h2 class="mume-header" id="l%C3%A4nkar-till-olika-katter-i-menyn" ebook-toc-level-2 heading="L&amp;#xE4;nkar till olika katter i menyn">L&#xE4;nkar till olika katter i menyn</h2>
+
+<ul>
+<li>L&#xE4;gg till l&#xE4;nkar till olika katter i App.js:</li>
+</ul>
+<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/cat/Bosse<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Bosse</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/cat/Misse<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Misse</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/cat/Eva<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Eva</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/cat/Hasse<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>isActive<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> isActive <span class="token operator">?</span> styles<span class="token punctuation">.</span><span class="token property-access">activeLink</span> <span class="token operator">:</span> styles<span class="token punctuation">.</span><span class="token property-access">inactiveLink</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token maybe-class-name">Hasse</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+</pre></div></body></html>
+    </div>
+  </body>
+</html>
