@@ -44,3 +44,8 @@
 
 - [Föreläsning](fetch)
 - [Övningar](fetch/exercises.html)
+
+## Conditional rendering
+
+- [Föreläsning](conditional-rendering)
+- [Övningar](conditional-rendering/exercises.html)
