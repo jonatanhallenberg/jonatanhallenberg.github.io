@@ -62,6 +62,7 @@ Projektet ska lämnas in tisdag 24/5 kl 23.59 och presenteras för klassen onsda
 | GET    | `/categories`     | -    | Hämtar alla kategorier  |
 | GET    | `/categories/:categoryName/recipes`     | -    | Hämtar recept för en viss kategori  |
 | GET    | `/categories/:categoryName/recipes?search=abc`     | -    | Hämtar alla recept i en kategori filtrerade på en söksträng  |
+| POST    | `/recipes/:recipeId/ratings`     | -    | Lägger till en ny rating för ett recept  |
 
 **För väl godkänt**
 
