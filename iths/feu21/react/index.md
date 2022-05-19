@@ -54,3 +54,8 @@
 ## Kaffeappen - workbook
 
 - [Workbook](kaffeappen-workbook)
+
+
+## Deployment
+
+- [Instruktion](deployment)

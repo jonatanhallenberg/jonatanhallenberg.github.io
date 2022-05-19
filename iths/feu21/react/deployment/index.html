@@ -19,6 +19,8 @@
     <div class="mume markdown-preview">
     <html><head></head><body><div><h1 class="mume-header" id="deploy" ebook-toc-level-1 heading="Deploy">Deploy</h1>
 
+<h2 class="mume-header" id="backend" ebook-toc-level-2 heading="Backend">Backend</h2>
+
 <ol>
 <li>&#xC4;ndra connection string i server.ts till MongoDB Atlas (gl&#xF6;m inte att l&#xE4;gga till databasnamn efter slash)</li>
 <li>Skapa app i Heroku</li>
@@ -42,7 +44,8 @@
 <li>Se till att porten kan styras via env-variabeln PORT:</li>
 </ol>
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> port <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">4000</span>
-</pre><ol start="9">
+</pre><p><strong>OBS! Om du inte vill commita ditt Mongo-l&#xF6;senord, g&#xE5; igenom n&#xE4;sta del innan du committar</strong></p>
+<ol start="9">
 <li>
 <p>Gl&#xF6;m inte att commita!</p>
 </li>
@@ -51,14 +54,16 @@
 </li>
 </ol>
 <pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token function">git</span> push heroku master
-</pre><h1 class="mume-header" id="env-variabel-i-backend" ebook-toc-level-1 heading="Env-variabel i backend">Env-variabel i backend</h1>
+</pre><h3 class="mume-header" id="env-variabel-i-backend" ebook-toc-level-3 heading="Env-variabel i backend">Env-variabel i backend</h3>
 
 <ol>
 <li>Installera och konfigurera dotenv</li>
-<li>Skapa .env-fil och l&#xE4;gg till (byt ut abc mot din connection string mot MongoDB Atlas):</li>
+<li>Skapa .env-fil och l&#xE4;gg till (byt ut *** mot din connection string mot MongoDB Atlas):</li>
 </ol>
-<p>MONGO_DB_CONNECTION_STRING=abc<br>
-3. &#xC4;ndra i server.ts s&#xE5; att env-variabel anv&#xE4;nds:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>MONGO_DB_CONNECTION_STRING=***
+</code></pre><ol start="3">
+<li>&#xC4;ndra i server.ts s&#xE5; att env-variabel anv&#xE4;nds:</li>
+</ol>
 <pre data-role="codeBlock" data-info="ts" class="language-ts"><span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">MONGO_DB_CONNECTION_STRING</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">connect</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">MONGO_DB_CONNECTION_STRING</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;listening to port: &apos;</span> <span class="token operator">+</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -102,7 +107,7 @@
 </pre><ol start="3">
 <li>L&#xE4;gg till samma environment-variabel i Netlify under appen-&gt;Site Settings-&gt;Build and Deploy-&gt;Environment men med hostnamnet f&#xF6;r ditt api p&#xE5; Heroku (t.ex. <a href="https://awesome-hr.herokuapp.com/">https://awesome-hr.herokuapp.com/</a>)</li>
 </ol>
-<h2 class="mume-header" id="cors-i-backend" ebook-toc-level-2 heading="Cors i backend">Cors i backend</h2>
+<h2 class="mume-header" id="cors" ebook-toc-level-2 heading="CORS">CORS</h2>
 
 <ul>
 <li>Se till att du anv&#xE4;nder cors i backend:</li>

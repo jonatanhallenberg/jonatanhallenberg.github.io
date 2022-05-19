@@ -49,7 +49,3 @@
 
 - [Föreläsning](conditional-rendering)
 - [Övningar](conditional-rendering/exercises.html)
-
-## Deployment
-
-- [Instruktion](deployment)
