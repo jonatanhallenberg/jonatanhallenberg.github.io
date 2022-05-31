@@ -49,3 +49,7 @@
 
 - [Föreläsning](conditional-rendering)
 - [Övningar](conditional-rendering/exercises.html)
+
+## Redux
+
+- [Föreläsning](redux)
