@@ -261,28 +261,39 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="unit-testing-tdd">Unit testing / TDD</h1>
+      <h1 class="mume-header" id="unit-testing-tdd-bdd">Unit testing / TDD / BDD</h1>
 
-<h2 class="mume-header" id="kom-ig%C3%A5ng">Kom ig&#xE5;ng</h2>
+<h2 class="mume-header" id="kom-ig%C3%A5ng-med-testning">Kom ig&#xE5;ng med testning</h2>
 
 <p>Skapa ett nytt typescript-projekt. Kom ih&#xE5;g att <strong>skriva testet f&#xF6;rst</strong>, sen funktionen!</p>
-<h4 class="mume-header" id="%C3%B6vning-1-validate-email">&#xD6;vning 1 - Validate email</h4>
+<h4 class="mume-header" id="%C3%B6vning-1-tdd-vs-bdd">&#xD6;vning 1 - TDD vs. BDD</h4>
+
+<ul>
+<li>Kolla film om TDD vs. BDD
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4QFYTQy47yA">https://www.youtube.com/watch?v=4QFYTQy47yA</a></li>
+<li>Diskutera i gruppen, vad &#xE4;r skillnaden mellan TDD och BDD?</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 class="mume-header" id="%C3%B6vning-2-validate-email">&#xD6;vning 2 - Validate email</h4>
 
 <p>Skriv testfall till, och implementera, en funktion som validerar en e-postadress:</p>
 <pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token function">validateEmail</span><span class="token punctuation">(</span>&#x201D;jonatan<span class="token decorator"><span class="token at operator">@</span><span class="token function">gmail</span></span><span class="token punctuation">.</span><span class="token property-access">com&#x201D;</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">true</span> <span class="token function">validateEmail</span><span class="token punctuation">(</span>&#x201D;jonatan<span class="token decorator"><span class="token at operator">@</span><span class="token function">gmail&#x201D;</span></span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">false</span> <span class="token function">validateEmail</span><span class="token punctuation">(</span>&#x201D;jonatan<span class="token punctuation">.</span><span class="token property-access">com&#x201D;</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
 </pre><hr>
-<h4 class="mume-header" id="%C3%B6vning-2-validate-zip">&#xD6;vning 2 - Validate ZIP</h4>
+<h4 class="mume-header" id="%C3%B6vning-3-validate-zip">&#xD6;vning 3 - Validate ZIP</h4>
 
 <p>Skriv testfall till, och implementera, en funktion som validerar ett postnummer som kommer in som en str&#xE4;ng:</p>
 <pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token function">validateZip</span><span class="token punctuation">(</span>&#x201D;<span class="token number">12345</span>&#x201D;<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">true</span> <span class="token function">validateZip</span><span class="token punctuation">(</span>&#x201D;<span class="token number">1234</span>&#x201D;<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
 <span class="token function">validateZip</span><span class="token punctuation">(</span>&#x201D;<span class="token number">123456</span>&#x201D;<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">false</span> <span class="token function">validateZip</span><span class="token punctuation">(</span>&#x201D;abcde&#x201D;<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
 </pre><hr>
-<h4 class="mume-header" id="%C3%B6vning-3-skapa-heading">&#xD6;vning 3 - Skapa Heading</h4>
+<h4 class="mume-header" id="%C3%B6vning-4-skapa-heading">&#xD6;vning 4 - Skapa Heading</h4>
 
 <p>Skriv testfall till, och implementera, en funktion som ska skapa HTML- rubriker. Exempel:</p>
 <pre data-role="codeBlock" data-info="tsx" class="language-tsx">    <span class="token function">makeHeading</span><span class="token punctuation">(</span><span class="token string">&quot;Hello&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> &#x2192; <span class="token string">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="token function">makeHeading</span><span class="token punctuation">(</span><span class="token string">&quot;Next level&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> &#x2192; <span class="token string">&quot;&lt;h2&gt;Next level&lt;/h2&gt;&quot;</span>
 </pre><hr>
-<h4 class="mume-header" id="%C3%B6vning-4-formatera-pris">&#xD6;vning 4 - Formatera Pris</h4>
+<h4 class="mume-header" id="%C3%B6vning-5-formatera-pris">&#xD6;vning 5 - Formatera Pris</h4>
 
 <p><strong>Del 1)</strong></p>
 <p>Skriv testfall till, och implementera, en funktion som avrundar tal. Du bygger ett plugin till en webbshop som ska ta reda p&#xE5; priserna f&#xF6;r olika produkter. Priserna kommer fr&#xE5;n databasen, men eftersom det &#xE4;r en internationell webbshop och priserna kan omvandlas mellan olika valutor, kan man f&#xE5; priser med m&#xE5;nga decimaler. Du vill att webbshoppen ska visa priset med tv&#xE5; decimaler och l&#xE4;gga p&#xE5; svensk valutasymbol efter&#xE5;t. Priserna m&#xE5;ste avrundas upp&#xE5;t, s&#xE5; inte aff&#xE4;ren f&#xF6;rlorar pengar. Exempel:</p>
@@ -302,15 +313,15 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token function">roundPrice</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">&apos;$%PRICE%&apos;</span><span class="token punctuation">)</span> &#x2192; <span class="token string">&quot;$14.00&quot;</span>
 <span class="token function">roundPrice</span><span class="token punctuation">(</span><span class="token number">1024.2048</span><span class="token punctuation">,</span> <span class="token string">&apos;USD %PRICE%&apos;</span><span class="token punctuation">)</span> &#x2192; <span class="token string">&quot;USD 1024.20 SEK&quot;</span>
 </pre><hr>
-<h4 class="mume-header" id="%C3%B6vning-5-kolla-om-lowercase">&#xD6;vning 5 - kolla om lowercase</h4>
+<h4 class="mume-header" id="%C3%B6vning-6-kolla-om-lowercase">&#xD6;vning 6 - kolla om lowercase</h4>
 
 <p>Skriv funktionen isLowerCase(input: string) som returnerar true om input endast inneh&#xE5;ller lowercase-bokst&#xE4;ver och false annars. <strong>Skriv tester f&#xF6;rst!</strong></p>
 <hr>
-<h4 class="mume-header" id="%C3%B6vning-6-primtal">&#xD6;vning 6 - primtal</h4>
+<h4 class="mume-header" id="%C3%B6vning-7-primtal">&#xD6;vning 7 - primtal</h4>
 
 <p><strong>Skriv tester f&#xF6;rst</strong> och en funktion som testar om ett tal &#xE4;r ett primtal.</p>
 <hr>
-<h4 class="mume-header" id="%C3%B6vning-7-genitiv">&#xD6;vning 7 - genitiv</h4>
+<h4 class="mume-header" id="%C3%B6vning-8-genitiv">&#xD6;vning 8 - genitiv</h4>
 
 <p><strong>Skriv tester f&#xF6;rst</strong> och en funktion som tar emot ett namn och returnerar genitivformen av namnet. Exempel:</p>
 <pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token function">getGenitive</span><span class="token punctuation">(</span><span class="token string">&quot;Jonatan&quot;</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token maybe-class-name">Jonatans</span>
@@ -319,7 +330,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token function">getGenitive</span><span class="token punctuation">(</span><span class="token string">&quot;Hampus&quot;</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token maybe-class-name">Hampus</span>
 <span class="token function">getGenitive</span><span class="token punctuation">(</span><span class="token string">&quot;Johanna&quot;</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token maybe-class-name">Johannas</span>
 </pre><hr>
-<h4 class="mume-header" id="%C3%B6vning-8-async">&#xD6;vning 8 - Async</h4>
+<h4 class="mume-header" id="%C3%B6vning-9-async">&#xD6;vning 9 - Async</h4>
 
 <h5 class="mume-header" id="del-1">Del 1)</h5>
 
@@ -434,7 +445,7 @@ pre[data-line] .line-highlight[data-end]:after {
         <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">)</span>
-</pre><h4 class="mume-header" id="del-4">Del 4)</h4>
+</pre><h4 class="mume-header" id="del-5">Del 5)</h4>
 
 <p>Skriv test och funktionen getUserByName(name: string, caseSensitive?: boolean) som i sin tur anropar getUsers. Exempel:</p>
 <pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token function">getUserByName</span><span class="token punctuation">(</span><span class="token string">&quot;erik&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
